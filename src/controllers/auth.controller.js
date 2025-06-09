@@ -13,14 +13,14 @@ export const login = async (req, res, next) => {
       httpOnly: true,
       maxAge: 15 * 60 * 1000, // 15 phút
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax'
+      sameSite: 'None'
     });
 
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 ngày
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax'
+      sameSite: 'None'
     });
 
     res.json({
@@ -123,7 +123,7 @@ export const refreshToken = async (req, res) => {
       httpOnly: true,
       maxAge: 15 * 60 * 1000, // 15 phút
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax'
+      sameSite: 'None'
     });
 
     res.json({
